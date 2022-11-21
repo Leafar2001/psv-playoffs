@@ -10,18 +10,18 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="Leaderboard" element={<LeaderboardPage />} />
-          <Route path="Prediction" element={<PredictionPage />} />
+          <Route path="leaderboard" element={<LeaderboardPage />} />
+          <Route path="prediction" element={<PredictionPage />} />
         </Routes>
         <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="Leaderboard">Leaderboard</Link>
+            <Link to="leaderboard">Leaderboard</Link>
           </li>
           <li>
-            <Link to="Prediction">Prediction</Link>
+            <Link to="prediction">Prediction</Link>
           </li>
         </ul>
       </Router>
