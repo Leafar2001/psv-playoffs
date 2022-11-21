@@ -1,15 +1,12 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const HomePage = (props: Props) => {
-  return (
-    <div>Home</div>
-  )
-}
+  return <div>Home</div>;
+};
 
-<style scoped>
-  
-</style>
+<style scoped></style>;
 
 export default HomePage;
+

@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const LeaderboardPage = (props: Props) => {
-  return (
-    <div>Leaderboard</div>
-  )
-}
+  return <div>Leaderboard</div>;
+};
 
-export default LeaderboardPage
+<style scoped></style>;
+
+export default LeaderboardPage;

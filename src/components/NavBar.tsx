@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const NavBar = (props: Props) => {
-  return (
-    <div>NavBar</div>
-  )
-}
+  return <div>NavBar</div>;
+};
+
+export default NavBar;
+
