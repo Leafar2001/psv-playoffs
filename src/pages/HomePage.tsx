@@ -4,6 +4,12 @@ type Props = {}
 
 const HomePage = (props: Props) => {
   return (
-    <div>HomePage</div>
+    <div>Home</div>
   )
 }
+
+<style scoped>
+  
+</style>
+
+export default HomePage;
