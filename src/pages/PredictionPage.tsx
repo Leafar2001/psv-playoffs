@@ -3,9 +3,11 @@ import React from "react";
 type Props = {};
 
 const PredictionPage = (props: Props) => {
-  return <div>Prediction</div>;
+  return (
+    <div className="w-full text-[32px] bg-white h-[90rem] opacity-95 backdrop-blur-sm">
+      Predictions
+    </div>
+  );
 };
-
-<style scoped></style>;
 
 export default PredictionPage;

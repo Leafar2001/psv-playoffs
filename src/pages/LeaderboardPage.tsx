@@ -3,9 +3,11 @@ import React from "react";
 type Props = {};
 
 const LeaderboardPage = (props: Props) => {
-  return <div>Leaderboard</div>;
+  return (
+    <div className="w-full text-[32px] bg-white h-[90rem] opacity-95 backdrop-blur-sm">
+      Leaderboard
+    </div>
+  );
 };
-
-<style scoped></style>;
 
 export default LeaderboardPage;
