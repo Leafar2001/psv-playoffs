@@ -7,3 +7,4 @@ const NavBar = (props: Props) => {
 };
 
 export default NavBar;
+

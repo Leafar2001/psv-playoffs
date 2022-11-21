@@ -9,3 +9,4 @@ const HomePage = (props: Props) => {
 <style scoped></style>;
 
 export default HomePage;
+
