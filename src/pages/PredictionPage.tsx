@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import HeaderBar from "../components/HeaderBar";
-
+import PredictionForm from "../components/PredictionForm";
 type Props = {};
 
 const PredictionPage = (props: Props) => {
@@ -9,7 +9,9 @@ const PredictionPage = (props: Props) => {
     <div>
       <NavBar />
       <HeaderBar Heading={"Predictions"} />
-      <div className="w-full text-[32px] bg-white min-h-[70vh] opacity-95 p-8"></div>
+      <div className="w-full text-[32px] bg-white min-h-[70vh] opacity-95 p-8">
+        <PredictionForm />
+      </div>
     </div>
   );
 };
