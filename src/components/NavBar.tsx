@@ -26,7 +26,7 @@ const NavBar = (props: Props) => {
         <li>
           <Link
             to="/dashboard"
-            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-black ${
               splitLocation[1] === "dashboard" ? "active" : ""
             }`}
           >
@@ -36,7 +36,7 @@ const NavBar = (props: Props) => {
         <li>
           <Link
             to="/leaderboard"
-            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-black ${
               splitLocation[1] === "leaderboard" ? "active" : ""
             }`}
           >
@@ -46,7 +46,7 @@ const NavBar = (props: Props) => {
         <li>
           <Link
             to="/prediction"
-            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-black ${
               splitLocation[1] === "prediction" ? "active" : ""
             }`}
           >
