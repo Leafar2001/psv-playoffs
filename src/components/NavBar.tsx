@@ -4,32 +4,54 @@ import { Link, useLocation } from "react-router-dom";
 type Props = {};
 
 const NavBar = (props: Props) => {
-
   //assigning location variable
-    const location = useLocation();
+  const location = useLocation();
 
-    //destructuring pathname from location
-    const { pathname } = location;
+  //destructuring pathname from location
+  const { pathname } = location;
 
-    //Javascript split method to get the name of the path in array
-    const splitLocation = pathname.split("/");
-    
+  //Javascript split method to get the name of the path in array
+  const splitLocation = pathname.split("/");
+
   return (
     <nav className="w-full flex justify-between items-center mt-20 mb-10">
       <ul className="flex">
-        <li className="text-[92px] py-4 font-bold text-white">
-            <Link className="logo-home" to="/">PSV</Link>
+        <li className="text-[48px] py-4 font-bold text-white">
+          <Link className="logo-home" to="/">
+            PSV
+          </Link>
         </li>
       </ul>
       <ul className="flex">
-        <li className={`px-8 py-4 text-[48px] font-bold text-white bg-[#222222] ${splitLocation[1] === "" ? "active" : ""}`}>
-            <Link to="/">DASHBOARD</Link>
+        <li>
+          <Link
+            to="/"
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+              splitLocation[1] === "" ? "active" : ""
+            }`}
+          >
+            DASHBOARD
+          </Link>
         </li>
-        <li className={`px-8 py-4 text-[48px] font-bold text-white bg-[#222222] ${splitLocation[1] === "leaderboard" ? "active" : ""}`}>
-            <Link to="leaderboard">LEADERBOARD</Link>
+        <li>
+          <Link
+            to="leaderboard"
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+              splitLocation[1] === "leaderboard" ? "active" : ""
+            }`}
+          >
+            LEADERBOARD
+          </Link>
         </li>
-        <li className={`px-8 py-4 text-[48px] font-bold text-white bg-[#222222] ${splitLocation[1] === "prediction" ? "active" : ""}`}>
-            <Link to="prediction">PREDICTION</Link>
+        <li>
+          <Link
+            to="prediction"
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+              splitLocation[1] === "prediction" ? "active" : ""
+            }`}
+          >
+            PREDICTION
+          </Link>
         </li>
       </ul>
     </nav>
@@ -37,4 +59,3 @@ const NavBar = (props: Props) => {
 };
 
 export default NavBar;
-
