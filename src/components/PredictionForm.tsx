@@ -21,7 +21,7 @@ const PredictionForm = (props: Props) => {
     sessionStorage.setItem("redCardsPrediction", e.currentTarget.value);
   };
   const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    sessionStorage.setItem("predicted", "true");
   };
 
   return (
