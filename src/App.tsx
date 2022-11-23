@@ -8,7 +8,7 @@ import PredictionPage from "./pages/PredictionPage";
 
 function App() {
   return (
-    <div className="app px-16 py-20">
+    <div className="app px-16 py-10">
       <Router>
         <Routes>
           <Route path="/" element={<IntroPage />} />
