@@ -23,26 +23,35 @@ const NavBar = (props: Props) => {
         </li>
       </ul>
       <ul className="flex">
-        <li
-          className={`px-8 py-4 text-[32px] font-bold text-white bg-[#222222] ${
-            splitLocation[1] === "" ? "active" : ""
-          }`}
-        >
-          <Link to="/">DASHBOARD</Link>
+        <li>
+          <Link
+            to="/"
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+              splitLocation[1] === "" ? "active" : ""
+            }`}
+          >
+            DASHBOARD
+          </Link>
         </li>
-        <li
-          className={`px-8 py-4 text-[32px] font-bold text-white bg-[#222222] ${
-            splitLocation[1] === "leaderboard" ? "active" : ""
-          }`}
-        >
-          <Link to="leaderboard">LEADERBOARD</Link>
+        <li>
+          <Link
+            to="leaderboard"
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+              splitLocation[1] === "leaderboard" ? "active" : ""
+            }`}
+          >
+            LEADERBOARD
+          </Link>
         </li>
-        <li
-          className={`px-8 py-4 text-[32px] font-bold text-white bg-[#222222] ${
-            splitLocation[1] === "prediction" ? "active" : ""
-          }`}
-        >
-          <Link to="prediction">PREDICTION</Link>
+        <li>
+          <Link
+            to="prediction"
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+              splitLocation[1] === "prediction" ? "active" : ""
+            }`}
+          >
+            PREDICTION
+          </Link>
         </li>
       </ul>
     </nav>
