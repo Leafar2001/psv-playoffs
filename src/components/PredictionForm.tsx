@@ -26,54 +26,50 @@ const PredictionForm = (props: Props) => {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      <label>
-        Home score
-        <input
-          type="number"
-          onChange={handleHomePrediction}
-          className="bg-black text-white p-2"
-          required
-        />
-      </label>
+      <label>Home score</label>
       <br />
-      <label>
-        Away score
-        <input
-          type="number"
-          onChange={handleAwayPrediction}
-          className="bg-black text-white p-2"
-          required
-        />
-      </label>
+      <input
+        type="number"
+        onChange={handleHomePrediction}
+        className="bg-black text-white p-2"
+        required
+      />
+      <br /> <br />
+      <label>Away score</label>
       <br />
-      <label>
-        Time of first goal
-        <input
-          type="number"
-          onChange={handleFirstGoalPrediction}
-          className="bg-black text-white p-2"
-        />
-      </label>
+      <input
+        type="number"
+        onChange={handleAwayPrediction}
+        className="bg-black text-white p-2"
+        required
+      />
+      <br /> <br />
+      <label>Time of first goal</label>
       <br />
-      <label>
-        Yellow cards
-        <input
-          type="number"
-          onChange={handleYellowCardsPrediction}
-          className="bg-black text-white p-2"
-          required
-        />
-      </label>
+      <input
+        type="number"
+        onChange={handleFirstGoalPrediction}
+        className="bg-black text-white p-2"
+      />
+      <br /> <br />
+      <label>Yellow cards</label>
       <br />
-      <label>
-        Red cards
-        <input
-          type="number"
-          onChange={handleRedCardsPrediction}
-          className="bg-black text-white p-2"
-          required
-        />
-      </label>
+      <input
+        type="number"
+        onChange={handleYellowCardsPrediction}
+        className="bg-black text-white p-2"
+        required
+      />
+      <br /> <br />
+      <label>Red cards</label>
+      <br />
+      <input
+        type="number"
+        onChange={handleRedCardsPrediction}
+        className="bg-black text-white p-2"
+        required
+      />
+      <br />
       <br />
       <input
         type="submit"
