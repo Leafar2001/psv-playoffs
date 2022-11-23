@@ -7,7 +7,7 @@ import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div className="app px-16 py-20">
+    <div className="app px-16 py-10">
       <Router>
         <NavBar />
         <Routes>
