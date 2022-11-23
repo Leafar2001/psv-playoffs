@@ -17,7 +17,7 @@ const NavBar = (props: Props) => {
     <nav className="w-full flex justify-between items-center mb-10">
       <ul className="flex">
         <li className="text-[48px] font-bold text-white">
-          <Link className="logo-home" to="/">
+          <Link className="logo-home" to="/dashboard">
             PSV
           </Link>
         </li>
@@ -25,9 +25,9 @@ const NavBar = (props: Props) => {
       <ul className="flex">
         <li>
           <Link
-            to="/"
-            className={`px-10 py-6 text-[32px] font-bold text-white bg-black ${
-              splitLocation[1] === "" ? "active" : ""
+            to="/dashboard"
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
+              splitLocation[1] === "dashboard" ? "active" : ""
             }`}
           >
             DASHBOARD
@@ -35,8 +35,8 @@ const NavBar = (props: Props) => {
         </li>
         <li>
           <Link
-            to="leaderboard"
-            className={`px-10 py-6 text-[32px] font-bold text-white bg-black ${
+            to="/leaderboard"
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
               splitLocation[1] === "leaderboard" ? "active" : ""
             }`}
           >
@@ -45,8 +45,8 @@ const NavBar = (props: Props) => {
         </li>
         <li>
           <Link
-            to="prediction"
-            className={`px-10 py-6 text-[32px] font-bold text-white bg-black ${
+            to="/prediction"
+            className={`px-10 py-6 text-[32px] font-bold text-white bg-[#222222] ${
               splitLocation[1] === "prediction" ? "active" : ""
             }`}
           >
