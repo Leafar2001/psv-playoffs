@@ -26,7 +26,7 @@ body {
 
 @media (orientation: landscape) {
   body {
-    background-image: url(/public/bg-image.jpg);
+    background-image: url(/public/bg-image--landscape.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100vw 100vh;
@@ -35,7 +35,7 @@ body {
 
 @media (orientation: portrait) {
   body {
-    background-image: url(/public/bg-image.jpg);
+    background-image: url(/public/bg-image--portrait.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100vw 100vh;
