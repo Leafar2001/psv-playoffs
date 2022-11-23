@@ -31,7 +31,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="number"
         onChange={handleHomePrediction}
-        className="bg-black text-white p-2"
+        className="bg-[#e2e8f0] p-1 rounded"
         required
       />
       <br /> <br />
@@ -40,7 +40,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="number"
         onChange={handleAwayPrediction}
-        className="bg-black text-white p-2"
+        className="bg-[#e2e8f0] p-1 rounded"
         required
       />
       <br /> <br />
@@ -49,7 +49,8 @@ const PredictionForm = (props: Props) => {
       <input
         type="number"
         onChange={handleFirstGoalPrediction}
-        className="bg-black text-white p-2"
+        className="bg-[#e2e8f0] p-1 rounded"
+        required
       />
       <br /> <br />
       <label>Yellow cards</label>
@@ -57,7 +58,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="number"
         onChange={handleYellowCardsPrediction}
-        className="bg-black text-white p-2"
+        className="bg-[#e2e8f0] p-1 rounded"
         required
       />
       <br /> <br />
@@ -66,7 +67,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="number"
         onChange={handleRedCardsPrediction}
-        className="bg-black text-white p-2"
+        className="bg-[#e2e8f0] p-1 rounded"
         required
       />
       <br />
@@ -74,7 +75,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="submit"
         value="Submit"
-        className="bg-red text-white p-2 font-bold"
+        className="bg-red text-white p-1 font-bold rounded"
         required
       />
     </form>
