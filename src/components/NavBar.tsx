@@ -14,9 +14,9 @@ const NavBar = (props: Props) => {
   const splitLocation = pathname.split("/");
 
   return (
-    <nav className="w-full flex justify-between items-center mt-20 mb-10">
+    <nav className="w-full flex justify-between items-center mb-10">
       <ul className="flex">
-        <li className="text-[48px] py-4 font-bold text-white">
+        <li className="text-[48px] font-bold text-white">
           <Link className="logo-home" to="/">
             PSV
           </Link>
