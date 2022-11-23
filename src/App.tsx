@@ -7,9 +7,9 @@ import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div className="app px-52">
+    <div className="app px-16">
       <Router>
-        <NavBar/>
+        <NavBar />
         <Routes>
           <Route path="/" element={<DashboardPage />} />
           <Route path="leaderboard" element={<LeaderboardPage />} />
