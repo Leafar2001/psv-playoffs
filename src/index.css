@@ -22,9 +22,24 @@ body {
   font-family: "Klavika-Regular", "sans-serif";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(/public/bg-image.jpg);
-  background-repeat: repeat-y;
-  background-size: 100vw 100vh;
+}
+
+@media (orientation: landscape) {
+  body {
+    background-image: url(/public/bg-image.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+    background-image: url(/public/bg-image.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+  }
 }
 
 code {
