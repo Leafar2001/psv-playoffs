@@ -31,7 +31,7 @@ const IntroPage = (props: Props) => {
         <label>
           Home score
           <input
-            type="text"
+            type="number"
             onChange={handleHomePrediction}
             className="bg-black text-white p-2"
             required
@@ -41,7 +41,7 @@ const IntroPage = (props: Props) => {
         <label>
           Away score
           <input
-            type="text"
+            type="number"
             onChange={handleAwayPrediction}
             className="bg-black text-white p-2"
             required
@@ -51,7 +51,7 @@ const IntroPage = (props: Props) => {
         <label>
           Time of first goal
           <input
-            type="text"
+            type="number"
             onChange={handleFirstGoalPrediction}
             className="bg-black text-white p-2"
           />
@@ -60,7 +60,7 @@ const IntroPage = (props: Props) => {
         <label>
           Yellow cards
           <input
-            type="text"
+            type="number"
             onChange={handleYellowCardsPrediction}
             className="bg-black text-white p-2"
             required
@@ -70,7 +70,7 @@ const IntroPage = (props: Props) => {
         <label>
           Red cards
           <input
-            type="text"
+            type="number"
             onChange={handleRedCardsPrediction}
             className="bg-black text-white p-2"
             required
