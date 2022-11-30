@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../db/firebase";
 import { doc, getDocs, collection } from "firebase/firestore";
 import Prediction from "../types/Prediction";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -26,9 +27,18 @@ const Leaderboard = (props: Props) => {
   return (
     <div>
       {predictions?.map((prediction: any, i: string) => (
-        <div key={i} className="flex text-lg w-full bg-grey mb-2 p-2">
-          <p>{prediction.userInfo.name}</p>
-          <div className="flex ml-auto">
+        <div
+          key={i}
+          className="flex items-center text-lg w-full bg-grey mb-2 p-2 rounded-sm"
+        >
+          <div className="flex justify-center items-center font-bold">
+            <img
+              src={prediction.userInfo.avatar}
+              className="w-[50px] h-[50px] bg-black rounded-full mr-2"
+            />
+            <p>{prediction.userInfo.name}</p>
+          </div>
+          <div className="flex ml-auto mr-auto">
             <p className="mr-4">
               Home score: {prediction.predictions.homeScore}
             </p>
@@ -36,12 +46,15 @@ const Leaderboard = (props: Props) => {
               Away score: {prediction.predictions.awayScore}
             </p>
             <p className="mr-4">
-              First goal: {prediction.predictions.firstGoal}
+              First goal: {prediction.predictions.firstGoal}"
             </p>
             <p className="mr-4">
               Yellow cards: {prediction.predictions.yellowCards}
             </p>
             <p className="mr-4">Red cards: {prediction.predictions.redCards}</p>
+          </div>
+          <div className="font-bold">
+            <Link to="/leaderboard">Predictions</Link>
           </div>
         </div>
       ))}
