@@ -42,7 +42,6 @@ const PredictionForm = (props: Props) => {
     };
     try {
       await addDoc(collection(db, "predictions"), {
-        title: "Predictions",
         userInfo,
         predictions,
         created: Timestamp.now(),
@@ -55,57 +54,57 @@ const PredictionForm = (props: Props) => {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      <label>Name</label>
+      <label className="text-xxl">Name</label>
       <br />
       <input
         type="text"
         onChange={handleNameInput}
-        className="bg-[#e2e8f0] p-1 rounded"
+        className="bg-grey p-1 rounded"
         required
       />
       <br /> <br />
-      <label>Home score</label>
+      <label className="text-xxl">Home score</label>
       <br />
       <input
         type="number"
         onChange={handleHomePrediction}
-        className="bg-[#e2e8f0] p-1 rounded"
+        className="bg-grey p-1 rounded"
         required
       />
       <br /> <br />
-      <label>Away score</label>
+      <label className="text-xxl">Away score</label>
       <br />
       <input
         type="number"
         onChange={handleAwayPrediction}
-        className="bg-[#e2e8f0] p-1 rounded"
+        className="bg-grey p-1 rounded"
         required
       />
       <br /> <br />
-      <label>Time of first goal</label>
+      <label className="text-xxl">Time of first goal</label>
       <br />
       <input
         type="number"
         onChange={handleFirstGoalPrediction}
-        className="bg-[#e2e8f0] p-1 rounded"
+        className="bg-grey] p-1 rounded"
         required
       />
       <br /> <br />
-      <label>Yellow cards</label>
+      <label className="text-xxl">Yellow cards</label>
       <br />
       <input
         type="number"
         onChange={handleYellowCardsPrediction}
-        className="bg-[#e2e8f0] p-1 rounded"
+        className="bg-grey p-1 rounded"
         required
       />
       <br /> <br />
-      <label>Red cards</label>
+      <label className="text-xxl">Red cards</label>
       <br />
       <input
         type="number"
         onChange={handleRedCardsPrediction}
-        className="bg-[#e2e8f0] p-1 rounded"
+        className="bg-grey p-1 rounded"
         required
       />
       <br />
@@ -113,7 +112,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="submit"
         value="Submit"
-        className="bg-red text-white p-1 font-bold rounded"
+        className="bg-red text-white text-xxl px-4 py-2 font-bold rounded"
         required
       />
     </form>

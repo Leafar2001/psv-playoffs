@@ -11,7 +11,9 @@ const PredictionPage = (props: Props) => {
   return (
     <div>
       <NavBar />
-      <HeaderBar Heading={currentUser + "'s Predictions"} />
+      <HeaderBar
+        Heading={currentUser ? `${currentUser}'s Predictions` : "Predictions"}
+      />
       <div className="w-full text-[32px] bg-white min-h-[70vh] opacity-95 p-8">
         {sessionStorage.getItem("predicted") ? (
           <PredictionOverview />
