@@ -1,8 +1,14 @@
 import React from "react";
+import { db } from "../db/firebase";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 type Props = {};
 
 const PredictionForm = (props: Props) => {
+  // Inputs
+  const handleNameInput = (e: React.FormEvent<HTMLInputElement>) => {
+    sessionStorage.setItem("name", e.currentTarget.value);
+  };
   const handleHomePrediction = (e: React.FormEvent<HTMLInputElement>) => {
     sessionStorage.setItem("homeScorePrediction", e.currentTarget.value);
   };
@@ -20,12 +26,44 @@ const PredictionForm = (props: Props) => {
   const handleRedCardsPrediction = (e: React.FormEvent<HTMLInputElement>) => {
     sessionStorage.setItem("redCardsPrediction", e.currentTarget.value);
   };
-  const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+  // Submit data
+  const handleSubmitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     sessionStorage.setItem("predicted", "true");
+    e.preventDefault();
+    const userInfo = {
+      name: sessionStorage.getItem("name"),
+    };
+    const predictions = {
+      homeScore: sessionStorage.getItem("homeScorePrediction"),
+      awayScore: sessionStorage.getItem("awayScorePrediction"),
+      firstGoal: sessionStorage.getItem("firstGoalPrediction"),
+      yellowCards: sessionStorage.getItem("yellowCardsPrediction"),
+      redCards: sessionStorage.getItem("redCardsPrediction"),
+    };
+    try {
+      await addDoc(collection(db, "predictions"), {
+        title: "Predictions",
+        userInfo,
+        predictions,
+        created: Timestamp.now(),
+      });
+    } catch (err) {
+      alert(err);
+    }
+    window.location.reload();
   };
 
   return (
     <form onSubmit={handleSubmitForm}>
+      <label>Name</label>
+      <br />
+      <input
+        type="text"
+        onChange={handleNameInput}
+        className="bg-[#e2e8f0] p-1 rounded"
+        required
+      />
+      <br /> <br />
       <label>Home score</label>
       <br />
       <input
