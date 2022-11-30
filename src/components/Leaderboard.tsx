@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../db/firebase";
-import { doc, getDocs, collection } from "firebase/firestore";
-import Prediction from "../types/Prediction";
+import { getDocs, collection } from "firebase/firestore";
 import { Link } from "react-router-dom";
 
 type Props = {};
@@ -9,7 +8,6 @@ type Props = {};
 const Leaderboard = (props: Props) => {
   const [predictions, setPredictions] = useState([] as any);
 
-  // Get firebase data
   const getLeaderboardData = async () => {
     await getDocs(collection(db, "predictions")).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
