@@ -86,7 +86,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="number"
         onChange={handleFirstGoalPrediction}
-        className="bg-grey] p-1 rounded"
+        className="bg-grey p-1 rounded"
         required
       />
       <br /> <br />
