@@ -2,9 +2,7 @@
 export const teamData = [
     {
         id: 1, 
-        teamStats: 
-        [
-            {
+        teamStats: {
                 teamName: "PSV",
                 generalStats: 
                 [
@@ -49,14 +47,11 @@ export const teamData = [
                         redCards: 0
                     }
                 ]
-            }
-        ]
+        }
     },
     {
         id: 2, 
-        teamStats: 
-        [
-            {
+        teamStats: {
                 teamName: "AJAX",
                 generalStats: 
                 [
@@ -83,7 +78,7 @@ export const teamData = [
                         subOns: 1,
                         injuryStatus: false,
                         goals: 11,
-                        assists:3,
+                        assists: 3,
                         yellowCards: 1,
                         redCards: 0
                     },
@@ -102,7 +97,6 @@ export const teamData = [
                     }
                 ]
             }
-        ]
     }
 ]
 
