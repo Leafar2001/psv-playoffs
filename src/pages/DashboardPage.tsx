@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import HeaderBar from "../components/HeaderBar";
 
-import GoalsChart from "../components/charts/GoalsChart";
+import DoughnutChart from "../components/charts/DoughnutChart";
 import { teamData } from "../data/teamData"
 
 type Props = {};
@@ -17,24 +17,18 @@ const DashboardPage = (props: Props) => {
 
   const NamesPsv: any = []
   const NamesAjax: any = []
-  NamesPsv.push(teamData[0].teamStats.players[0].playerName)
-  NamesPsv.push(teamData[0].teamStats.players[1].playerName)
-  NamesAjax.push(teamData[1].teamStats.players[0].playerName)
-  NamesAjax.push(teamData[1].teamStats.players[1].playerName)
+  teamData[0].teamStats.players.forEach((player) => NamesPsv.push(player.playerName))
+  teamData[1].teamStats.players.forEach((player) => NamesAjax.push(player.playerName))
 
   const GoalsPsv: any = []
   const GoalsAjax: any = []
-  GoalsPsv.push(teamData[0].teamStats.players[0].goals)
-  GoalsPsv.push(teamData[0].teamStats.players[1].goals)
-  GoalsAjax.push(teamData[1].teamStats.players[0].goals)
-  GoalsAjax.push(teamData[1].teamStats.players[1].goals)
+  teamData[0].teamStats.players.forEach((player) => GoalsPsv.push(player.goals))
+  teamData[1].teamStats.players.forEach((player) => GoalsAjax.push(player.goals))
 
   const AssistsPsv: any = []
   const AssistsAjax: any = []
-  AssistsPsv.push(teamData[0].teamStats.players[0].assists)
-  AssistsPsv.push(teamData[0].teamStats.players[1].assists)
-  AssistsAjax.push(teamData[1].teamStats.players[0].assists)
-  AssistsAjax.push(teamData[1].teamStats.players[1].assists)
+  teamData[0].teamStats.players.forEach((player) => AssistsPsv.push(player.assists))
+  teamData[0].teamStats.players.forEach((player) => AssistsAjax.push(player.assists))
   
   const YellowCardsPsv: any = []
   const YellowCardsAjax: any = []
@@ -103,7 +97,7 @@ const DashboardPage = (props: Props) => {
         <div className="flex justify-between">
           <div className="w-1/3">
             <div className="flex justify-center align-center"><p>PSV</p></div>
-            <GoalsChart chartData={psvData} />
+            <DoughnutChart chartData={psvData} />
           </div>
           <div className="w-1/5">
             <div className="flex justify-center">
@@ -118,7 +112,7 @@ const DashboardPage = (props: Props) => {
           </div>
           <div className="w-1/3">
             <div className="flex justify-center align-center"><p>AJAX</p></div>
-            <GoalsChart chartData={ajaxData}/>
+            <DoughnutChart chartData={ajaxData}/>
           </div>
         </div>
       </div>

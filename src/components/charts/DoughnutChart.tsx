@@ -2,7 +2,7 @@ import React from "react";
 import 'chart.js/auto';
 import { Doughnut } from "react-chartjs-2";
 
-const GoalsChart = ({chartData}: any) => {
+const DoughnutChart = ({chartData}: any) => {
   return (
     <div>
       <Doughnut data={chartData} />
@@ -10,4 +10,4 @@ const GoalsChart = ({chartData}: any) => {
   );
 };
 
-export default GoalsChart;
+export default DoughnutChart;
