@@ -25,7 +25,6 @@ const LeaderboardPage = (props: Props) => {
     ],
   };
 
-  // TODO: function for checking who has a player that scored points
   const checkScorers = () => {
     const uniquePlayers = new Set<Player>();
     teamData.forEach((team) => {
@@ -55,7 +54,7 @@ const LeaderboardPage = (props: Props) => {
     <div>
       <NavBar />
       <HeaderBar Heading={"Leaderboard"} />
-      <div className="w-full text-[32px] bg-white min-h-[70vh] opacity-95 p-8">
+      <div className="w-full text-[32px] text-black bg-white min-h-[70vh] opacity-95 p-8">
         {scorers.map((player: Player) => (
           <p>{player.playerName}</p>
         ))}

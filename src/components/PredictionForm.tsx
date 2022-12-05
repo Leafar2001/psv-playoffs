@@ -13,7 +13,7 @@ const PredictionForm = (props: Props) => {
     sessionStorage.setItem("name", e.currentTarget.value);
   };
   const handlePlayerPrediction = (e: React.FormEvent<HTMLSelectElement>) => {
-    sessionStorage.setItem("bestPlayer", e.currentTarget.value);
+    sessionStorage.setItem("bestPlayerPrediction", e.currentTarget.value);
   };
   const handleHomePrediction = (e: React.FormEvent<HTMLInputElement>) => {
     sessionStorage.setItem("homeScorePrediction", e.currentTarget.value);
@@ -92,6 +92,9 @@ const PredictionForm = (props: Props) => {
         onChange={handlePlayerPrediction}
         required
       >
+        <option selected disabled value="">
+          Select player
+        </option>
         {players.map((player: string, i) => {
           return (
             <option key={i} value={player}>
