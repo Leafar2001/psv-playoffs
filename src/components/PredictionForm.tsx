@@ -153,7 +153,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="submit"
         value="Submit"
-        className="bg-red text-white text-xxl px-4 py-2 font-bold rounded"
+        className="bg-red text-white text-xxl px-4 py-2 font-bold rounded cursor-pointer"
         required
       />
     </form>
