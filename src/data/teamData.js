@@ -21,7 +21,7 @@ export const teamData = [
                 players: 
                 [
                     {
-                        playerId: 1,
+                        id: 1,
                         playerName: "Cody Gakpo",
                         appearances: 24,
                         minutesPlayed: 1960,
@@ -34,7 +34,7 @@ export const teamData = [
                         redCards: 0
                     },
                     {
-                        playerId: 2,
+                        id: 2,
                         playerName: "Xavi Simons",
                         appearances: 22,
                         minutesPlayed: 1567,
@@ -45,7 +45,33 @@ export const teamData = [
                         assists: 4,
                         yellowCards: 3,
                         redCards: 0
-                    }
+                    },
+                    {
+                        id: 3,
+                        playerName: "Luuk de Jong",
+                        appearances: 9,
+                        minutesPlayed: 402,
+                        starts: 5,
+                        subOns: 4,
+                        injuryStatus: false,
+                        goals: 3,
+                        assists: 1,
+                        yellowCards: 1,
+                        redCards: 0
+                    },
+                    {
+                        id: 4,
+                        playerName: "Yorbe Vertessen",
+                        appearances: 6,
+                        minutesPlayed: 150,
+                        starts: 1,
+                        subOns: 5,
+                        injuryStatus: false,
+                        goals: 1,
+                        assists: 0,
+                        yellowCards: 0,
+                        redCards: 0
+                    },
                 ]
         }
     },
@@ -70,7 +96,7 @@ export const teamData = [
                 players: 
                 [
                     {
-                        playerId: 3,
+                        id: 1,
                         playerName: "Steven Bergwijn",
                         appearances: 21,
                         minutesPlayed: 1687,
@@ -83,7 +109,7 @@ export const teamData = [
                         redCards: 0
                     },
                     {
-                        playerId: 4,
+                        id: 2,
                         playerName: "Mohammed Kudus",
                         appearances: 21,
                         minutesPlayed: 979,
@@ -91,6 +117,32 @@ export const teamData = [
                         subOns: 11,
                         injuryStatus: false,
                         goals: 10,
+                        assists: 2,
+                        yellowCards: 3,
+                        redCards: 0
+                    },
+                    {
+                        id: 3,
+                        playerName: "Brian Brobbey",
+                        appearances: 21,
+                        minutesPlayed: 693,
+                        starts: 9,
+                        subOns: 3,
+                        injuryStatus: false,
+                        goals: 17,
+                        assists: 2,
+                        yellowCards: 2,
+                        redCards: 0
+                    },
+                    {
+                        id: 4,
+                        playerName: "Davy Klaassen",
+                        appearances: 4,
+                        minutesPlayed: 348,
+                        starts: 3,
+                        subOns: 1,
+                        injuryStatus: false,
+                        goals: 1,
                         assists: 2,
                         yellowCards: 1,
                         redCards: 0
