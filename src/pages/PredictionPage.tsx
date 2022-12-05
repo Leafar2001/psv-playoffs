@@ -6,10 +6,14 @@ import PredictionOverview from "../components/PredictionOverview";
 type Props = {};
 
 const PredictionPage = (props: Props) => {
+  const currentUser = sessionStorage.getItem("name");
+
   return (
     <div>
       <NavBar />
-      <HeaderBar Heading={"Predictions"} />
+      <HeaderBar
+        Heading={currentUser ? `${currentUser}'s Predictions` : "Predictions"}
+      />
       <div className="w-full text-[32px] bg-white min-h-[70vh] opacity-95 p-8">
         {sessionStorage.getItem("predicted") ? (
           <PredictionOverview />
