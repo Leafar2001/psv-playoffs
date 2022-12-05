@@ -92,8 +92,12 @@ const PredictionForm = (props: Props) => {
         onChange={handlePlayerPrediction}
         required
       >
-        {players.map((player: string) => {
-          return <option value={player}>{player}</option>;
+        {players.map((player: string, i) => {
+          return (
+            <option key={i} value={player}>
+              {player}
+            </option>
+          );
         })}
       </select>
       <br /> <br />
