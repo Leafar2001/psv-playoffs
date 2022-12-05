@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../db/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import Prediction from "../types/Prediction";
 
 type Props = {};
 
@@ -24,7 +25,7 @@ const Leaderboard = (props: Props) => {
 
   return (
     <div>
-      {predictions?.map((prediction: any, i: string) => (
+      {predictions?.map((prediction: Prediction, i: number) => (
         <div
           key={i}
           className="flex items-center text-lg w-full bg-grey mb-2 p-2 rounded-sm"
@@ -37,6 +38,9 @@ const Leaderboard = (props: Props) => {
             <p>{prediction.userInfo.name}</p>
           </div>
           <div className="flex ml-auto mr-auto">
+            <p className="mr-4">
+              Best player: {prediction.predictions.bestPlayer}
+            </p>
             <p className="mr-4">
               Home score: {prediction.predictions.homeScore}
             </p>

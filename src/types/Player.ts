@@ -1,6 +1,13 @@
 export default interface Player {
-  Name: String;
-  Age: Number;
-  TotalGoals: Number;
-  TotalAssists: Number;
+  playerId: number;
+  playerName: string;
+  appearances: number;
+  minutesPlayed: number;
+  starts: number;
+  subOns: number;
+  injuryStatus: boolean;
+  goals: number;
+  assists: number;
+  yellowCards: number;
+  redCards: number;
 }
