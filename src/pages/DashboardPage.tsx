@@ -212,12 +212,33 @@ const DashboardPage = (props: Props) => {
     
   };
 
+
+
+  let colorTeam1: any = []
+  let colorTeam2: any = []
+  const fillColors = () => {
+    if (teamData[0].teamStats.teamName === "PSV"){
+      teamData[0].teamStats.players.forEach(() => {
+        colorTeam1.push("#ED1C24")
+      })
+    }
+    if (teamData[1].teamStats.teamName === "AJAX"){
+      teamData[1].teamStats.players.forEach(() => {
+        colorTeam2.push("#111111")
+      })
+    }
+  }
+  fillColors();
+  let colorCompare: any = colorTeam1.concat(colorTeam2)
+
+
+
   const Team1Data = {
     labels: activeNames,
     datasets: [
       {
         label: "Aantal",
-        backgroundColor: ["#ED1C24", "#333333"],
+        backgroundColor: colorTeam1,
         data: activeData,
       },
     ],
@@ -228,7 +249,7 @@ const DashboardPage = (props: Props) => {
     datasets: [
       {
         label: "Aantal",
-        backgroundColor: ["#ED1C24", "#333333"],
+        backgroundColor: colorTeam2,
         data: activeData2,
       },
     ],
@@ -239,12 +260,13 @@ const DashboardPage = (props: Props) => {
     datasets: [
       {
         label: "Aantal",
-        backgroundColor: ["#ED1C24", "#333333"],
+        backgroundColor: colorCompare,
         data: activeCompareData,
       },
     ],
     
   };
+
 
 
   return (
@@ -254,7 +276,7 @@ const DashboardPage = (props: Props) => {
       <div className="w-full text-[32px] bg-white min-h-[70vh] opacity-95 p-8">
         <div className="flex justify-between">
           <div className="w-1/3">
-            <div className="flex justify-center align-center">
+            <div className="flex justify-center align-center mb-8">
               <p>{teamData[0].teamStats.teamName}</p>
             </div>
             <BarChart chartData={Team1Data} />
@@ -262,7 +284,7 @@ const DashboardPage = (props: Props) => {
           <div className="w-1/5">
             <div className="flex flex-col justify-center">
               <select className="cursor-pointer mb-10" onChange={fetchData}>
-                <option selected value="goals">Goals</option>
+                <option defaultValue="goals" value="goals">Goals</option>
                 <option value="assists">Assists</option>
                 <option value="yellow-cards">Yellow cards</option>
                 <option value="min-played">Minutes played</option>
@@ -271,7 +293,7 @@ const DashboardPage = (props: Props) => {
             </div>
           </div>
           <div className="w-1/3">
-            <div className="flex justify-center align-center">
+            <div className="flex justify-center align-center mb-8">
               <p>{teamData[1].teamStats.teamName}</p>
             </div>
             <BarChart chartData={Team2Data} />
