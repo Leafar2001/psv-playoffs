@@ -4,7 +4,7 @@ import HeaderBar from "../components/HeaderBar";
 
 import BarChart from "../components/charts/BarChart";
 import DoughnutChart from "../components/charts/DoughnutChart";
-import { teamData } from "../data/teamData"
+import { teamData } from "../data/teamData";
 
 
 type Props = {};
@@ -232,7 +232,6 @@ const DashboardPage = (props: Props) => {
   let colorCompare: any = colorTeam1.concat(colorTeam2)
 
 
-
   const Team1Data = {
     labels: activeNames,
     datasets: [
@@ -267,11 +266,9 @@ const DashboardPage = (props: Props) => {
     
   };
 
-
-
   return (
     <div>
-      <NavBar/>
+      <NavBar />
       <HeaderBar Heading={"Dashboard"} />
       <div className="w-full text-[32px] bg-white min-h-[70vh] opacity-95 p-8">
         <div className="flex justify-between">
