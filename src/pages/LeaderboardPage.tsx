@@ -10,19 +10,20 @@ type Props = {};
 
 const LeaderboardPage = (props: Props) => {
   const [scorers, setScorers] = useState<Player[]>([]);
+  const [playerPoints, setPlayerPoints] = useState<number>(0);
 
   // TODO: set dynamic points based on goals
-  const scoringSystem = {
+  const scoring = {
     goal: 10,
     assist: 5,
   };
-  const playerPoints = 0;
 
   const checkScorers = () => {
     const uniquePlayers = new Set<Player>();
     teamData.forEach((team) => {
       team.teamStats.players.map((player) => {
         uniquePlayers.add(player);
+        return uniquePlayers;
       });
     });
     const uniquePlayersArray = Array.from(uniquePlayers);
@@ -41,9 +42,17 @@ const LeaderboardPage = (props: Props) => {
     });
   };
 
+  const setPoints = () => {
+    const points = playerPoints;
+    const pointsAdded = scoring.goal;
+    //TODO: Function for points adding when goal
+    const newPoints = points + pointsAdded;
+    setPlayerPoints(newPoints);
+  };
+
   useEffect(() => {
     checkScorers();
-  }, [scorers]);
+  }, [scorers, playerPoints]);
 
   return (
     <div>
@@ -63,19 +72,22 @@ const LeaderboardPage = (props: Props) => {
                 //     )
                 //   )
                 // )
-                teamData[0].teamStats.players.find(
-                  (player) =>
-                    player.playerId === goal.scoredBy && (
-                      <span>{player.playerName}</span>
-                    )
-                )}
+                teamData[0].teamStats.players
+                  // .filter((player) => player.playerId === goal.scoredBy)
+                  .filter(
+                    (player) =>
+                      player.playerId === goal.scoredBy && (
+                        <span>{player.playerName}</span>
+                      )
+                  )
+                  .toString()}
             </p>
           ))}
           <p className="mt-4">
             Current scorers:{" "}
             {scorers?.map((player: Player) => (
               <span className="mr-4" key={player.playerId}>
-                {player.playerName}
+                {`${player.playerName} (${playerPoints})`}
               </span>
             ))}
           </p>

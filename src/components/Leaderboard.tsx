@@ -37,7 +37,9 @@ const Leaderboard = (props: Props) => {
               src={prediction.userInfo.avatar}
               className="w-8 h-8 bg-black rounded-full"
             />
-            <p>{prediction.userInfo.name + " (" + userPoints + ")"}</p>
+            <p className="capitalize">
+              {prediction.userInfo.name + " (" + userPoints + ")"}
+            </p>
           </div>
           <div className="flex gap-x-8">
             <div className="min-w-[8vw]">
