@@ -49,10 +49,10 @@ code {
 
 /* custom css */
 
-.logo-home {
-  font-family: "PSV-BoldItalic", "sans-serif";
-}
-
 .active {
   background-color: #ed1c24;
+}
+
+.logo-home {
+  width: 175px;
 }

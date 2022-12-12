@@ -17,8 +17,8 @@ const NavBar = (props: Props) => {
     <nav className="w-full flex justify-between items-center mb-10">
       <ul className="flex">
         <li className="text-[48px] font-bold text-white">
-          <Link className="logo-home" to="/dashboard">
-            PSV
+          <Link className="logo-link" to="/dashboard">
+            <img src="/brainport-psv-logo.png" alt="logo" className="logo-home" />
           </Link>
         </li>
       </ul>
