@@ -27,7 +27,7 @@ const IntroPage = (props: Props) => {
           onChange={handleNameInput}
           className="bg-[#D9D9D9] p-1 pl-4 rounded w-96 h-14"
           required
-          placeholder="Name"
+          placeholder="First name"
         />
       </div>
       <div className="h-60"></div>
