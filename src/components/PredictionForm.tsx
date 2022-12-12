@@ -76,15 +76,18 @@ const PredictionForm = (props: Props) => {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      <label className="text-xxl">Name</label>
-      <br />
-      <input
-        type="text"
-        onChange={handleNameInput}
-        className="bg-grey p-1 rounded"
-        required
-      />
-      {/* <br /> <br />
+      <div className="flex flex-wrap gap-x-32 gap-y-16 items-center justify-center">
+        <div>
+          <label className="text-xxl">Name</label>
+          <br />
+          <input
+            type="text"
+            onChange={handleNameInput}
+            className="bg-grey p-1 rounded"
+            required
+          />
+        </div>
+        {/* <br /> <br />
       <label className="text-xxl">Top scorer</label>
       <br />
       <select
@@ -103,57 +106,61 @@ const PredictionForm = (props: Props) => {
           );
         })}
       </select> */}
-      <br /> <br />
-      <label className="text-xxl">Home score</label>
-      <br />
-      <input
-        type="number"
-        onChange={handleHomePrediction}
-        className="bg-grey p-1 rounded"
-        required
-      />
-      <br /> <br />
-      <label className="text-xxl">Away score</label>
-      <br />
-      <input
-        type="number"
-        onChange={handleAwayPrediction}
-        className="bg-grey p-1 rounded"
-        required
-      />
-      <br /> <br />
-      <label className="text-xxl">Time of first goal</label>
-      <br />
-      <input
-        type="number"
-        onChange={handleFirstGoalPrediction}
-        className="bg-grey p-1 rounded"
-        required
-      />
-      <br /> <br />
-      <label className="text-xxl">Yellow cards</label>
-      <br />
-      <input
-        type="number"
-        onChange={handleYellowCardsPrediction}
-        className="bg-grey p-1 rounded"
-        required
-      />
-      <br /> <br />
-      <label className="text-xxl">Red cards</label>
-      <br />
-      <input
-        type="number"
-        onChange={handleRedCardsPrediction}
-        className="bg-grey p-1 rounded"
-        required
-      />
-      <br />
-      <br />
+        <div>
+          <label className="text-xxl">Home score</label>
+          <br />
+          <input
+            type="number"
+            onChange={handleHomePrediction}
+            className="bg-grey p-1 rounded"
+            required
+          />
+        </div>
+        <div>
+          <label className="text-xxl">Away score</label>
+          <br />
+          <input
+            type="number"
+            onChange={handleAwayPrediction}
+            className="bg-grey p-1 rounded"
+            required
+          />
+        </div>
+        <div>
+          <label className="text-xxl">Time of first goal</label>
+          <br />
+          <input
+            type="number"
+            onChange={handleFirstGoalPrediction}
+            className="bg-grey p-1 rounded"
+            required
+          />
+        </div>
+        <div>
+          <label className="text-xxl">Yellow cards</label>
+          <br />
+          <input
+            type="number"
+            onChange={handleYellowCardsPrediction}
+            className="bg-grey p-1 rounded"
+            required
+          />
+        </div>
+        <div>
+          <label className="text-xxl">Red cards</label>
+          <br />
+          <input
+            type="number"
+            onChange={handleRedCardsPrediction}
+            className="bg-grey p-1 rounded"
+            required
+          />
+        </div>
+      </div>
       <input
         type="submit"
-        value="Submit"
-        className="bg-red text-white text-xxl px-4 py-2 font-bold rounded cursor-pointer"
+        value="Submit predictions"
+        className="bg-red text-white text-xxl flex mx-auto mt-32 px-4 py-2 font-bold rounded cursor-pointer"
         required
       />
     </form>
