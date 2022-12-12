@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 import { db } from "../db/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import { Link } from "react-router-dom";
+import Prediction from "../types/Prediction";
+import { liveMatchData } from "../data/liveMatchData";
 
 type Props = {};
 
 const Leaderboard = (props: Props) => {
   const [predictions, setPredictions] = useState([] as any);
+  const [userPoints, setUserPoints] = useState(0);
 
   const getLeaderboardData = async () => {
     await getDocs(collection(db, "predictions")).then((querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({
+      const newData = querySnapshot?.docs?.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
@@ -24,36 +27,47 @@ const Leaderboard = (props: Props) => {
 
   return (
     <div>
-      {predictions?.map((prediction: any, i: string) => (
+      {predictions.map((prediction: Prediction, i: number) => (
         <div
           key={i}
-          className="flex items-center text-lg w-full bg-grey mb-2 p-2 rounded-sm"
+          className="flex items-center justify-start text-lg w-full bg-grey mb-2 p-4 rounded-xl"
         >
-          <div className="flex justify-center items-center font-bold">
+          <div className="flex flex-col font-bold items-center min-w-[5vw] mr-8">
             <img
               src={prediction.userInfo.avatar}
-              className="w-[50px] h-[50px] bg-black rounded-full mr-2"
+              className="w-8 h-8 bg-black rounded-full"
             />
-            <p>{prediction.userInfo.name}</p>
+            <p className="capitalize">{prediction.userInfo.name}</p>
           </div>
-          <div className="flex ml-auto mr-auto">
-            <p className="mr-4">
-              Home score: {prediction.predictions.homeScore}
-            </p>
-            <p className="mr-4">
-              Away score: {prediction.predictions.awayScore}
-            </p>
-            <p className="mr-4">
-              First goal: {prediction.predictions.firstGoal}"
-            </p>
-            <p className="mr-4">
-              Yellow cards: {prediction.predictions.yellowCards}
-            </p>
-            <p className="mr-4">Red cards: {prediction.predictions.redCards}</p>
+          <div className="flex gap-x-16">
+            {/* <div className="min-w-[8vw]">
+              <p className="font-bold">Best player</p>
+              <p>{prediction.predictions.bestPlayer}</p>
+            </div> */}
+            <div>
+              <p className="font-bold">Home Team</p>
+              <p>{prediction.predictions.homeScore}</p>
+            </div>
+            <div>
+              <p className="font-bold">Away Team</p>
+              <p>{prediction.predictions.awayScore}</p>
+            </div>
+            <div>
+              <p className="font-bold">First Goal</p>
+              <p>{prediction.predictions.firstGoal}"</p>
+            </div>
+            <div>
+              <p className="font-bold">Yellow Cards</p>
+              <p>{prediction.predictions.yellowCards}</p>
+            </div>
+            <div>
+              <p className="font-bold">Red Cards</p>
+              <p>{prediction.predictions.redCards}</p>
+            </div>
           </div>
-          <div className="font-bold">
-            <Link to="/leaderboard">Predictions</Link>
-          </div>
+          {/* <div className="font-bold ml-auto">
+            <Link to="/leaderboard">All Predictions</Link>
+          </div> */}
         </div>
       ))}
     </div>

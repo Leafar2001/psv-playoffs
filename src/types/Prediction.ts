@@ -1,7 +1,14 @@
 export default interface Prediction {
-  homeScore: String;
-  awayScore: String;
-  firstGoal: String;
-  yellowCards: String;
-  redCards: String;
+  userInfo: {
+    name: string;
+    avatar: string;
+  };
+  predictions: {
+    bestPlayer: string;
+    homeScore: number;
+    awayScore: number;
+    firstGoal: number;
+    yellowCards: number;
+    redCards: number;
+  };
 }
