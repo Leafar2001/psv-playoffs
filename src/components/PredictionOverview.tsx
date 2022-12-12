@@ -3,6 +3,7 @@ import React from "react";
 type Props = {};
 
 const PredictionOverview = (props: Props) => {
+  const bestPlayerPrediction = sessionStorage.getItem("bestPlayerPrediction");
   const homePrediction = sessionStorage.getItem("homeScorePrediction");
   const awayPrediction = sessionStorage.getItem("awayScorePrediction");
   const yellowCardsPrediction = sessionStorage.getItem("yellowCardsPrediction");
@@ -11,6 +12,7 @@ const PredictionOverview = (props: Props) => {
 
   return (
     <div>
+      <p>Your top scoring player prediction: {bestPlayerPrediction}</p>
       <p>Your home score prediction: {homePrediction}</p>
       <p>Your away score prediction: {awayPrediction}</p>
       <p>Your yellow cards prediction: {yellowCardsPrediction}</p>

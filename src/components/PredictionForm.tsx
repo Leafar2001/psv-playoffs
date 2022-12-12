@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { db } from "../db/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { teamData } from "../data/teamData";
 
 type Props = {};
 
 const PredictionForm = (props: Props) => {
+  const [players, setPlayers] = useState<string[]>([]);
+
   // Inputs
   const handleNameInput = (e: React.FormEvent<HTMLInputElement>) => {
     sessionStorage.setItem("name", e.currentTarget.value);
+  };
+  const handlePlayerPrediction = (e: React.FormEvent<HTMLSelectElement>) => {
+    sessionStorage.setItem("bestPlayerPrediction", e.currentTarget.value);
   };
   const handleHomePrediction = (e: React.FormEvent<HTMLInputElement>) => {
     sessionStorage.setItem("homeScorePrediction", e.currentTarget.value);
@@ -34,6 +40,7 @@ const PredictionForm = (props: Props) => {
       name: sessionStorage.getItem("name"),
     };
     const predictions = {
+      bestPlayer: sessionStorage.getItem("bestPlayerPrediction"),
       homeScore: sessionStorage.getItem("homeScorePrediction"),
       awayScore: sessionStorage.getItem("awayScorePrediction"),
       firstGoal: sessionStorage.getItem("firstGoalPrediction"),
@@ -52,6 +59,21 @@ const PredictionForm = (props: Props) => {
     window.location.reload();
   };
 
+  const getPlayerList = () => {
+    const uniquePlayers = new Set<string>();
+    teamData.forEach((team) => {
+      team.teamStats.players.map((player) => {
+        uniquePlayers.add(player.playerName);
+      });
+    });
+    const uniquePlayersArray = Array.from(uniquePlayers);
+    setPlayers(uniquePlayersArray);
+  };
+
+  useEffect(() => {
+    getPlayerList();
+  }, []);
+
   return (
     <form onSubmit={handleSubmitForm}>
       <label className="text-xxl">Name</label>
@@ -62,6 +84,25 @@ const PredictionForm = (props: Props) => {
         className="bg-grey p-1 rounded"
         required
       />
+      <br /> <br />
+      <label className="text-xxl">Top scorer</label>
+      <br />
+      <select
+        className="cursor-pointer"
+        onChange={handlePlayerPrediction}
+        required
+      >
+        <option selected disabled value="">
+          Select player
+        </option>
+        {players.map((player: string, i) => {
+          return (
+            <option key={i} value={player}>
+              {player}
+            </option>
+          );
+        })}
+      </select>
       <br /> <br />
       <label className="text-xxl">Home score</label>
       <br />
@@ -112,7 +153,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="submit"
         value="Submit"
-        className="bg-red text-white text-xxl px-4 py-2 font-bold rounded"
+        className="bg-red text-white text-xxl px-4 py-2 font-bold rounded cursor-pointer"
         required
       />
     </form>
