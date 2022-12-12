@@ -12,9 +12,9 @@ const PredictionForm = (props: Props) => {
   const handleNameInput = (e: React.FormEvent<HTMLInputElement>) => {
     sessionStorage.setItem("name", e.currentTarget.value);
   };
-  const handlePlayerPrediction = (e: React.FormEvent<HTMLSelectElement>) => {
-    sessionStorage.setItem("bestPlayerPrediction", e.currentTarget.value);
-  };
+  // const handlePlayerPrediction = (e: React.FormEvent<HTMLSelectElement>) => {
+  //   sessionStorage.setItem("bestPlayerPrediction", e.currentTarget.value);
+  // };
   const handleHomePrediction = (e: React.FormEvent<HTMLInputElement>) => {
     sessionStorage.setItem("homeScorePrediction", e.currentTarget.value);
   };
@@ -40,7 +40,7 @@ const PredictionForm = (props: Props) => {
       name: sessionStorage.getItem("name"),
     };
     const predictions = {
-      bestPlayer: sessionStorage.getItem("bestPlayerPrediction"),
+      // bestPlayer: sessionStorage.getItem("bestPlayerPrediction"),
       homeScore: sessionStorage.getItem("homeScorePrediction"),
       awayScore: sessionStorage.getItem("awayScorePrediction"),
       firstGoal: sessionStorage.getItem("firstGoalPrediction"),
@@ -59,20 +59,20 @@ const PredictionForm = (props: Props) => {
     window.location.reload();
   };
 
-  const getPlayerList = () => {
-    const uniquePlayers = new Set<string>();
-    teamData.forEach((team) => {
-      team.teamStats.players.map((player) => {
-        uniquePlayers.add(player.playerName);
-      });
-    });
-    const uniquePlayersArray = Array.from(uniquePlayers);
-    setPlayers(uniquePlayersArray);
-  };
+  // const getPlayerList = () => {
+  //   const uniquePlayers = new Set<string>();
+  //   teamData.forEach((team) => {
+  //     team.teamStats.players.map((player) => {
+  //       uniquePlayers.add(player.playerName);
+  //     });
+  //   });
+  //   const uniquePlayersArray = Array.from(uniquePlayers);
+  //   setPlayers(uniquePlayersArray);
+  // };
 
-  useEffect(() => {
-    getPlayerList();
-  }, []);
+  // useEffect(() => {
+  //   getPlayerList();
+  // }, []);
 
   return (
     <form onSubmit={handleSubmitForm}>
@@ -84,7 +84,7 @@ const PredictionForm = (props: Props) => {
         className="bg-grey p-1 rounded"
         required
       />
-      <br /> <br />
+      {/* <br /> <br />
       <label className="text-xxl">Top scorer</label>
       <br />
       <select
@@ -102,7 +102,7 @@ const PredictionForm = (props: Props) => {
             </option>
           );
         })}
-      </select>
+      </select> */}
       <br /> <br />
       <label className="text-xxl">Home score</label>
       <br />

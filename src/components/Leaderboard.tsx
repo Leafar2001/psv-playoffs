@@ -37,27 +37,37 @@ const Leaderboard = (props: Props) => {
               src={prediction.userInfo.avatar}
               className="w-8 h-8 bg-black rounded-full"
             />
-            <p className="capitalize">
-              {prediction.userInfo.name + " (" + userPoints + ")"}
-            </p>
+            <p className="capitalize">{prediction.userInfo.name}</p>
           </div>
-          <div className="flex gap-x-8">
-            <div className="min-w-[8vw]">
+          <div className="flex gap-x-16">
+            {/* <div className="min-w-[8vw]">
               <p className="font-bold">Best player</p>
               <p>{prediction.predictions.bestPlayer}</p>
-            </div>
+            </div> */}
             <div>
-              <p className="font-bold">{liveMatchData.teams.homeTeam}</p>
+              <p className="font-bold">Home Team</p>
               <p>{prediction.predictions.homeScore}</p>
             </div>
             <div>
-              <p className="font-bold">{liveMatchData.teams.awayTeam}</p>
+              <p className="font-bold">Away Team</p>
               <p>{prediction.predictions.awayScore}</p>
             </div>
+            <div>
+              <p className="font-bold">First Goal</p>
+              <p>{prediction.predictions.firstGoal}"</p>
+            </div>
+            <div>
+              <p className="font-bold">Yellow Cards</p>
+              <p>{prediction.predictions.yellowCards}</p>
+            </div>
+            <div>
+              <p className="font-bold">Red Cards</p>
+              <p>{prediction.predictions.redCards}</p>
+            </div>
           </div>
-          <div className="font-bold ml-auto">
+          {/* <div className="font-bold ml-auto">
             <Link to="/leaderboard">All Predictions</Link>
-          </div>
+          </div> */}
         </div>
       ))}
     </div>

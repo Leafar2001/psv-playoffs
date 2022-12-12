@@ -9,50 +9,50 @@ import Player from "../types/Player";
 type Props = {};
 
 const LeaderboardPage = (props: Props) => {
-  const [scorers, setScorers] = useState<Player[]>([]);
-  const [playerPoints, setPlayerPoints] = useState<number>(0);
+  // const [scorers, setScorers] = useState<Player[]>([]);
+  // const [playerPoints, setPlayerPoints] = useState<number>(0);
 
-  // TODO: set dynamic points based on goals
-  const scoring = {
-    goal: 10,
-    assist: 5,
-  };
+  // // TODO: set dynamic points based on goals
+  // const scoring = {
+  //   goal: 10,
+  //   assist: 5,
+  // };
 
-  const checkScorers = () => {
-    const uniquePlayers = new Set<Player>();
-    teamData.forEach((team) => {
-      team.teamStats.players.map((player) => {
-        uniquePlayers.add(player);
-        return uniquePlayers;
-      });
-    });
-    const uniquePlayersArray = Array.from(uniquePlayers);
-    const dupeScorers: Player[] = [];
-    liveMatchData.goals.forEach((goal) =>
-      uniquePlayersArray.forEach(
-        (player) =>
-          player.playerId === goal.scoredBy && dupeScorers.push(player)
-      )
-    );
-    const scorersArray = Array.from(new Set<Player>(dupeScorers));
-    scorersArray.forEach((scorer) => {
-      if (scorers.indexOf(scorer) === -1) {
-        setScorers(scorersArray);
-      }
-    });
-  };
+  // const checkScorers = () => {
+  //   const uniquePlayers = new Set<Player>();
+  //   teamData.forEach((team) => {
+  //     team.teamStats.players.map((player) => {
+  //       uniquePlayers.add(player);
+  //       return uniquePlayers;
+  //     });
+  //   });
+  //   const uniquePlayersArray = Array.from(uniquePlayers);
+  //   const dupeScorers: Player[] = [];
+  //   liveMatchData.goals.forEach((goal) =>
+  //     uniquePlayersArray.forEach(
+  //       (player) =>
+  //         player.playerId === goal.scoredBy && dupeScorers.push(player)
+  //     )
+  //   );
+  //   const scorersArray = Array.from(new Set<Player>(dupeScorers));
+  //   scorersArray.forEach((scorer) => {
+  //     if (scorers.indexOf(scorer) === -1) {
+  //       setScorers(scorersArray);
+  //     }
+  //   });
+  // };
 
-  const setPoints = () => {
-    const points = playerPoints;
-    const pointsAdded = scoring.goal;
-    //TODO: Function for points adding when goal
-    const newPoints = points + pointsAdded;
-    setPlayerPoints(newPoints);
-  };
+  // const setPoints = () => {
+  //   const points = playerPoints;
+  //   const pointsAdded = scoring.goal;
+  //   //TODO: Function for points adding when goal
+  //   const newPoints = points + pointsAdded;
+  //   setPlayerPoints(newPoints);
+  // };
 
-  useEffect(() => {
-    checkScorers();
-  }, [scorers, playerPoints]);
+  // useEffect(() => {
+  //   checkScorers();
+  // }, [scorers, playerPoints]);
 
   return (
     <div>
@@ -60,7 +60,7 @@ const LeaderboardPage = (props: Props) => {
       <HeaderBar Heading={"Leaderboard"} />
       <div className="w-full text-[32px] text-black bg-white min-h-[70vh] opacity-95 p-8">
         <div className="w-full text-xl text-black flex flex-col mb-8">
-          <p>Current goals:</p>
+          {/* <p>Current goals:</p>
           {liveMatchData.goals.map((goal) => (
             <p key={goal.id}>
               {goal.timeScored +
@@ -82,15 +82,15 @@ const LeaderboardPage = (props: Props) => {
                   )
                   .toString()}
             </p>
-          ))}
-          <p className="mt-4">
+          ))} */}
+          {/* <p className="mt-4">
             Current scorers:{" "}
             {scorers?.map((player: Player) => (
               <span className="mr-4" key={player.playerId}>
                 {`${player.playerName} (${playerPoints})`}
               </span>
             ))}
-          </p>
+          </p> */}
         </div>
         <Leaderboard />
       </div>
