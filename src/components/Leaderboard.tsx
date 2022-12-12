@@ -13,7 +13,7 @@ const Leaderboard = (props: Props) => {
 
   const getLeaderboardData = async () => {
     await getDocs(collection(db, "predictions")).then((querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({
+      const newData = querySnapshot?.docs?.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
@@ -27,7 +27,7 @@ const Leaderboard = (props: Props) => {
 
   return (
     <div>
-      {predictions?.map((prediction: Prediction, i: number) => (
+      {predictions.map((prediction: Prediction, i: number) => (
         <div
           key={i}
           className="flex items-center justify-start text-lg w-full bg-grey mb-2 p-4 rounded-xl"
