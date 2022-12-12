@@ -9,9 +9,6 @@ const PredictionForm = (props: Props) => {
   const [players, setPlayers] = useState<string[]>([]);
 
   // Inputs
-  const handleNameInput = (e: React.FormEvent<HTMLInputElement>) => {
-    sessionStorage.setItem("name", e.currentTarget.value);
-  };
   // const handlePlayerPrediction = (e: React.FormEvent<HTMLSelectElement>) => {
   //   sessionStorage.setItem("bestPlayerPrediction", e.currentTarget.value);
   // };
@@ -77,7 +74,7 @@ const PredictionForm = (props: Props) => {
   return (
     <form onSubmit={handleSubmitForm}>
       <div className="flex flex-wrap gap-x-32 gap-y-16 items-center justify-center">
-        <div>
+        {/* <div>
           <label className="text-xxl">Name</label>
           <br />
           <input
@@ -86,7 +83,8 @@ const PredictionForm = (props: Props) => {
             className="bg-grey p-1 rounded"
             required
           />
-        </div>
+        </div> */}
+        
         {/* <br /> <br />
       <label className="text-xxl">Top scorer</label>
       <br />
