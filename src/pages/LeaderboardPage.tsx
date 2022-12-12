@@ -5,6 +5,7 @@ import Leaderboard from "../components/Leaderboard";
 import { teamData } from "../data/teamData";
 import { liveMatchData } from "../data/liveMatchData";
 import Player from "../types/Player";
+import { motion } from "framer-motion";
 
 type Props = {};
 
@@ -57,10 +58,14 @@ const LeaderboardPage = (props: Props) => {
   return (
     <div>
       <NavBar />
-      <HeaderBar Heading={"Leaderboard"} />
-      <div className="w-full text-[32px] text-black bg-white min-h-[70vh] opacity-95 p-8">
-        <div className="w-full text-xl text-black flex flex-col mb-8">
-          {/* <p>Current goals:</p>
+      <motion.div
+        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 50 }}
+      >
+        <HeaderBar Heading={"Leaderboard"} />
+        <div className="w-full text-[32px] text-black bg-white min-h-[70vh] opacity-95 p-8">
+          <div className="w-full text-xl text-black flex flex-col mb-8">
+            {/* <p>Current goals:</p>
           {liveMatchData.goals.map((goal) => (
             <p key={goal.id}>
               {goal.timeScored +
@@ -83,7 +88,7 @@ const LeaderboardPage = (props: Props) => {
                   .toString()}
             </p>
           ))} */}
-          {/* <p className="mt-4">
+            {/* <p className="mt-4">
             Current scorers:{" "}
             {scorers?.map((player: Player) => (
               <span className="mr-4" key={player.playerId}>
@@ -91,9 +96,10 @@ const LeaderboardPage = (props: Props) => {
               </span>
             ))}
           </p> */}
+          </div>
+          <Leaderboard />
         </div>
-        <Leaderboard />
-      </div>
+      </motion.div>
     </div>
   );
 };
