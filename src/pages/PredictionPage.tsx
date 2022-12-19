@@ -1,9 +1,9 @@
-import React from "react";
-import NavBar from "../components/NavBar";
 import HeaderBar from "../components/HeaderBar";
+import NavBar from "../components/NavBar";
 import PredictionForm from "../components/PredictionForm";
 import PredictionOverview from "../components/PredictionOverview";
 import { motion } from "framer-motion";
+import React from "react";
 
 type Props = {};
 
@@ -20,7 +20,7 @@ const PredictionPage = (props: Props) => {
         <HeaderBar
           Heading={currentUser ? `${currentUser}'s Predictions` : "Predictions"}
         />
-        <div className="w-full text-[32px] bg-white min-h-[70vh] opacity-95 p-8">
+        <div className="min-h-[70vh] w-full bg-white p-8 text-[32px] opacity-95">
           {sessionStorage.getItem("predicted") ? (
             <PredictionOverview />
           ) : (

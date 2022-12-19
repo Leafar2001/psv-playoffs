@@ -1,16 +1,14 @@
+import HeaderBar from "../components/HeaderBar";
 import React from "react";
-import { Link } from "react-router-dom";
-import HeaderBar from "../components/HeaderBar"
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { FiCircle } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 import { redirect } from "react-router-dom";
 
 type Props = {};
 
 const IntroPage = (props: Props) => {
-
   let navigate = useNavigate();
 
   const handleNameInput = (e: React.FormEvent<HTMLInputElement>) => {
@@ -19,41 +17,41 @@ const IntroPage = (props: Props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate("/dashboard")
-  }
+    navigate("/dashboard");
+  };
 
   return (
     <div>
       <div className="flex justify-center">
-        <div className="w-[30vw] h-[40px] relative mt-5 z-10 flex justify-center items-center bg-black text-white font-bold uppercase text-[24px]">
+        <div className="relative z-10 mt-5 flex h-[40px] w-[30vw] items-center justify-center bg-black text-[24px] font-bold uppercase text-white">
           Name
         </div>
       </div>
       <div className="h-36"></div>
-      <div className="flex justify-center text-black relative z-10 pb-2 h-12">What is your name?</div>
+      <div className="relative z-10 flex h-12 justify-center pb-2 text-black">
+        What is your name?
+      </div>
       <div className="flex justify-center">
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             onChange={handleNameInput}
-            className="bg-[#D9D9D9] p-1 pl-4 rounded w-96 h-14"
+            className="h-14 w-96 rounded bg-[#D9D9D9] p-1 pl-4"
             required
             placeholder="First name"
           />
           <div className="h-20"></div>
-          <div className="flex relative justify-center z-10">
-            <input 
+          <div className="relative z-10 flex justify-center">
+            <input
               type="submit"
               value="Get started"
-              className="bg-red text-white text-xxl flex px-4 py-2 font-bold rounded cursor-pointer"
+              className="text-xxl flex cursor-pointer rounded bg-red px-4 py-2 font-bold text-white"
               required
             />
           </div>
         </form>
       </div>
-      
     </div>
-
   );
 };
 

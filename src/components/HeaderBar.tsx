@@ -6,7 +6,7 @@ type Props = {
 
 const HeaderBar = (props: Props) => {
   return (
-    <div className="w-[30vw] h-[40px] mx-auto relative top-[20px] z-10 flex justify-center items-center bg-black text-white font-bold uppercase text-[24px]">
+    <div className="relative top-[20px] z-10 mx-auto flex h-[40px] w-[30vw] items-center justify-center bg-black text-[24px] font-bold uppercase text-white">
       {props.Heading}
     </div>
   );

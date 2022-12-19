@@ -14,11 +14,15 @@ const NavBar = (props: Props) => {
   const splitLocation = pathname.split("/");
 
   return (
-    <nav className="w-full flex justify-between items-center mb-10">
+    <nav className="mb-10 flex w-full items-center justify-between">
       <ul className="flex">
         <li className="text-[48px] font-bold text-white">
           <Link className="logo-link" to="/dashboard">
-            <img src="/brainport-psv-logo.png" alt="logo" className="logo-home" />
+            <img
+              src="/brainport-psv-logo.png"
+              alt="logo"
+              className="logo-home"
+            />
           </Link>
         </li>
       </ul>
@@ -26,7 +30,7 @@ const NavBar = (props: Props) => {
         <li>
           <Link
             to="/dashboard"
-            className={`px-10 py-6 text-[32px] font-bold text-white bg-black ${
+            className={`bg-black px-10 py-6 text-[32px] font-bold text-white ${
               splitLocation[1] === "dashboard" ? "active" : ""
             }`}
           >
@@ -36,7 +40,7 @@ const NavBar = (props: Props) => {
         <li>
           <Link
             to="/leaderboard"
-            className={`px-10 py-6 text-[32px] font-bold text-white bg-black ${
+            className={`bg-black px-10 py-6 text-[32px] font-bold text-white ${
               splitLocation[1] === "leaderboard" ? "active" : ""
             }`}
           >
@@ -46,7 +50,7 @@ const NavBar = (props: Props) => {
         <li>
           <Link
             to="/prediction"
-            className={`px-10 py-6 text-[32px] font-bold text-white bg-black ${
+            className={`bg-black px-10 py-6 text-[32px] font-bold text-white ${
               splitLocation[1] === "prediction" ? "active" : ""
             }`}
           >

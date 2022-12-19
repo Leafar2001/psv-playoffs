@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { db } from "../db/firebase";
-import { getDocs, collection } from "firebase/firestore";
-import { Link } from "react-router-dom";
-import Prediction from "../types/Prediction";
 import { liveMatchData } from "../data/liveMatchData";
+import { db } from "../db/firebase";
+import Prediction from "../types/Prediction";
+import { getDocs, collection } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -30,12 +30,12 @@ const Leaderboard = (props: Props) => {
       {predictions.map((prediction: Prediction, i: number) => (
         <div
           key={i}
-          className="flex items-center justify-start text-lg w-full bg-grey mb-2 p-4 rounded-xl"
+          className="mb-2 flex w-full items-center justify-start rounded-xl bg-grey p-4 text-lg"
         >
-          <div className="flex flex-col font-bold items-center min-w-[5vw] mr-8">
+          <div className="mr-8 flex min-w-[5vw] flex-col items-center font-bold">
             <img
               src={prediction.userInfo.avatar}
-              className="w-8 h-8 bg-black rounded-full"
+              className="h-8 w-8 rounded-full bg-black"
             />
             <p className="capitalize">{prediction.userInfo.name}</p>
           </div>

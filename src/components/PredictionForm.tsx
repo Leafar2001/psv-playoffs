@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { teamData } from "../data/teamData";
 import { db } from "../db/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import { teamData } from "../data/teamData";
+import React, { useEffect, useState } from "react";
 
 type Props = {};
 
@@ -73,7 +73,7 @@ const PredictionForm = (props: Props) => {
 
   return (
     <form onSubmit={handleSubmitForm}>
-      <div className="flex flex-wrap gap-x-32 gap-y-16 items-center justify-center">
+      <div className="flex flex-wrap items-center justify-center gap-x-32 gap-y-16">
         {/* <div>
           <label className="text-xxl">Name</label>
           <br />
@@ -84,7 +84,7 @@ const PredictionForm = (props: Props) => {
             required
           />
         </div> */}
-        
+
         {/* <br /> <br />
       <label className="text-xxl">Top scorer</label>
       <br />
@@ -110,7 +110,7 @@ const PredictionForm = (props: Props) => {
           <input
             type="number"
             onChange={handleHomePrediction}
-            className="bg-grey p-1 rounded"
+            className="rounded bg-grey p-1"
             required
           />
         </div>
@@ -120,7 +120,7 @@ const PredictionForm = (props: Props) => {
           <input
             type="number"
             onChange={handleAwayPrediction}
-            className="bg-grey p-1 rounded"
+            className="rounded bg-grey p-1"
             required
           />
         </div>
@@ -130,7 +130,7 @@ const PredictionForm = (props: Props) => {
           <input
             type="number"
             onChange={handleFirstGoalPrediction}
-            className="bg-grey p-1 rounded"
+            className="rounded bg-grey p-1"
             required
           />
         </div>
@@ -140,7 +140,7 @@ const PredictionForm = (props: Props) => {
           <input
             type="number"
             onChange={handleYellowCardsPrediction}
-            className="bg-grey p-1 rounded"
+            className="rounded bg-grey p-1"
             required
           />
         </div>
@@ -150,7 +150,7 @@ const PredictionForm = (props: Props) => {
           <input
             type="number"
             onChange={handleRedCardsPrediction}
-            className="bg-grey p-1 rounded"
+            className="rounded bg-grey p-1"
             required
           />
         </div>
@@ -158,7 +158,7 @@ const PredictionForm = (props: Props) => {
       <input
         type="submit"
         value="Submit predictions"
-        className="bg-red text-white text-xxl flex mx-auto mt-32 px-4 py-2 font-bold rounded cursor-pointer"
+        className="text-xxl mx-auto mt-32 flex cursor-pointer rounded bg-red px-4 py-2 font-bold text-white"
         required
       />
     </form>
