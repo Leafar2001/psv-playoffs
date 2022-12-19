@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import NavBar from "../components/NavBar";
 import HeaderBar from "../components/HeaderBar";
-
+import NavBar from "../components/NavBar";
 import BarChart from "../components/charts/BarChart";
 import DoughnutChart from "../components/charts/DoughnutChart";
 import { teamData } from "../data/teamData";
 import { motion } from "framer-motion";
+import React, { useState } from "react";
 
 type Props = {};
 
@@ -267,17 +266,17 @@ const DashboardPage = (props: Props) => {
         initial={{ opacity: 0, y: 50 }}
       >
         <HeaderBar Heading={"Dashboard"} />
-        <div className="w-full text-[32px] bg-white min-h-[70vh] opacity-95 p-8">
+        <div className="min-h-[70vh] w-full bg-white p-8 text-[32px] opacity-95">
           <div className="flex justify-between">
             <div className="w-1/3">
-              <div className="flex justify-center align-center mb-8">
+              <div className="align-center mb-8 flex justify-center">
                 <p>{teamData[0].teamStats.teamName}</p>
               </div>
               <BarChart chartData={Team1Data} />
             </div>
             <div className="w-1/5">
               <div className="flex flex-col justify-center">
-                <select className="cursor-pointer mb-10" onChange={fetchData}>
+                <select className="mb-10 cursor-pointer" onChange={fetchData}>
                   <option defaultValue="goals" value="goals">
                     Goals
                   </option>
@@ -289,7 +288,7 @@ const DashboardPage = (props: Props) => {
               </div>
             </div>
             <div className="w-1/3">
-              <div className="flex justify-center align-center mb-8">
+              <div className="align-center mb-8 flex justify-center">
                 <p>{teamData[1].teamStats.teamName}</p>
               </div>
               <BarChart chartData={Team2Data} />

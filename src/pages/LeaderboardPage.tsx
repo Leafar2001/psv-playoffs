@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
-import NavBar from "../components/NavBar";
 import HeaderBar from "../components/HeaderBar";
 import Leaderboard from "../components/Leaderboard";
-import { teamData } from "../data/teamData";
+import NavBar from "../components/NavBar";
 import { liveMatchData } from "../data/liveMatchData";
+import { teamData } from "../data/teamData";
 import Player from "../types/Player";
 import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
 
 type Props = {};
 
@@ -63,8 +63,8 @@ const LeaderboardPage = (props: Props) => {
         initial={{ opacity: 0, y: 50 }}
       >
         <HeaderBar Heading={"Leaderboard"} />
-        <div className="w-full text-[32px] text-black bg-white min-h-[70vh] opacity-95 p-8">
-          <div className="w-full text-xl text-black flex flex-col mb-8">
+        <div className="min-h-[70vh] w-full bg-white p-8 text-[32px] text-black opacity-95">
+          <div className="mb-8 flex w-full flex-col text-xl text-black">
             {/* <p>Current goals:</p>
           {liveMatchData.goals.map((goal) => (
             <p key={goal.id}>
