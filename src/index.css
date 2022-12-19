@@ -3,42 +3,61 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: PSV-BoldItalic;
-    src: url("/public/fonts/PSVBranding-BoldItalic.otf") format("opentype");
+  font-family: PSV-BoldItalic;
+  src: url("/public/fonts/PSVBranding-BoldItalic.otf") format("opentype");
 }
 
 @font-face {
-    font-family: Klavika-Regular;
-    src: url("/public/fonts/Klavika-Regular.otf") format("opentype");
+  font-family: Klavika-Regular;
+  src: url("/public/fonts/Klavika-Regular.otf") format("opentype");
 }
 
 @font-face {
-    font-family: Klavika-Bold;
-    src: url("/public/fonts/klavika-Bold.otf") format("opentype");
+  font-family: Klavika-Bold;
+  src: url("/public/fonts/klavika-Bold.otf") format("opentype");
 }
 
 body {
   margin: 0;
-  font-family: 'Klavika-Regular', 'sans-serif';
+  font-family: "Klavika-Regular", "sans-serif";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(/public/bg-image.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+@media (orientation: landscape) {
+  body {
+    background-image: url(/public/bg-image--landscape.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+    background-image: url(/public/bg-image--portrait.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+  }
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
 /* custom css */
 
-.logo-home {
-  font-family: 'PSV-BoldItalic', 'sans-serif';
+.active {
+  background-color: #ed1c24;
 }
 
-.active {
-  background-color: #F50000;
+.logo-home {
+  width: 175px;
+}
+
+.intro-page {
+  background-image: url(/public/intro-background.png);
+  background-size: 100vw 100vh;
 }

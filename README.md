@@ -1,46 +1,40 @@
-# Getting Started with Create React App
+# PSV Playoffs
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![](https://i.imgur.com/cYy1i0R.png)
 
-## Available Scripts
+PSV Playoffs is a web app developed by a group of FHICT students as a school project to enhance the experience of live football matches in the Brainport Experience Box at the Phillips Stadium.
 
-In the project directory, you can run:
+Players can predict scores of a live match and gain points based on their predictions. For each match, the player with the highest points of all competitors attending the Brainport Experience Box will receive a prize.
+<br /><br />
+
+## Demo
+
+There is a live demo of the latest release available [here](https://psv-playoffs.vercel.app/).
+<br /><br />
+
+## Technologies used
+
+[React](https://reactjs.org/) (JS Framework)\
+[React-icons](https://react-icons.github.io/react-icons/) (React icon library)\
+[Firebase](https://firebase.google.com/) (Database)\
+[Framer Motion](https://www.npmjs.com/package/framer-motion) (Animation library)\
+[Chart.js](https://www.chartjs.org/) (Charts library)
+<br /><br />
+
+## Installation
+
+To run the app locally, in the project directory, you can run:
+
+### `npm install`
+
+After cloning the repository, run `npm install` to download all the dependencies for this app.
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
